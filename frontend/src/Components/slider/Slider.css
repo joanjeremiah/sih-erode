@@ -91,6 +91,8 @@
 
   .slide-container{
     width: 100% !important;
+    margin-top: 7rem !important;
+    margin-bottom: 5rem !important;
   }
 
   .slide img{
@@ -107,6 +109,16 @@
     background-position: center;
     display: flex !important;
     /* flex-direction: column; */
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+  }
+
+  .slide .slide-content{
+    flex: 3;
+    text-align: center;
+    color: white;
+  }
+
+  .slide > img{
+    flex: 2;
   }

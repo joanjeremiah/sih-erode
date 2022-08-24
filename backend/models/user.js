@@ -1,22 +1,32 @@
 const mongoose = require('mongoose');
 
 const User = mongoose.model('User', {
-
-    name: {
+    username: {
         type: String,
         required: true,
-    },
-    
-    email: {
+        min: 3,
+        max: 20,
+        unique: true,
+      },
+      email: {
         type: String,
         required: true,
-        unique: true
-    },
-
-    password: {
+        unique: true,
+        max: 50,
+      },
+      password: {
         type: String,
-        required: true
-    },
+        required: true,
+        min: 8,
+      },
+      isAvatarImageSet: {
+        type: Boolean,
+        default: false,
+      },
+      avatarImage: {
+        type: String,
+        default: "",
+      },
 });
 
 

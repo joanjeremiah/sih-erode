@@ -11,7 +11,7 @@ router.post("/signup", (req, res, next) => {
       console.log(req.body);
       const user = new User({
         email: req.body.email,
-        name: req.body.name,
+        username: req.body.name,
         password: hash
       });
 
@@ -88,6 +88,35 @@ router.post("/signup", (req, res, next) => {
       res.json(users)
     })
 
+  })
+
+  router.get('/:id',checkAuth,(req,res) => {
+    console.log('user data')
+    User.findOne({_id: req.params.id}).then(users=>{
+      console.log(users);
+      res.json(users)
+    })
+  })
+
+  router.post('/setAvatar/:id',checkAuth,async (req,res) => {
+    console.log('set avatar')
+    try {
+        const userid = req.params.id;
+  
+        const avatarImage = req.body.image;
+        
+        const userData =  await User.findByIdAndUpdate(userid,
+        
+        {
+          isAvatarImageSet:true,
+          avatarImage},
+          { new: true }
+        
+        );
+        return res.json({isSet:userData.isAvatarImageSet,image:userData.avatarImage});
+    } catch (ex) {
+      next(ex);
+    }
   })
 
 

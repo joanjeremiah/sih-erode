@@ -79,7 +79,15 @@ export class Auth extends Component {
             }))
             Axios.post('/user/signup', this.state.user).then(response => {
                 console.log(response);
-                
+                toast(response.data.message, {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
                 this.setState(pre => ({
                     isloading: false,
                     isLoginMode: true
@@ -196,13 +204,13 @@ export class Auth extends Component {
                 <hr></hr>
                 <form onSubmit={this.mySubmitHandler} className="pt-4">
                     {!this.state.isLoginMode && <div className="form-group">
-                        <label htmlFor="name">Name </label>
+                        <label htmlFor="name">User Name </label>
                         <input
                             type='text'
                             name='name'
                             value={this.state.user.name}
                             className={"form-control " + (this.state.errors.name ? 'is-invalid' : '')}
-                            placeholder="Enter your full name"
+                            placeholder="Enter your user name"
                             required
                             onChange={this.myChangeHandler}
                         />
@@ -232,7 +240,7 @@ export class Auth extends Component {
                             className={"form-control " + (this.state.errors.password ? 'is-invalid' : '')}
                             placeholder="Enter your Password"
                             required="required"
-                            data-error="Please enter your full name."
+                            data-error="Please enter your user name."
                             onChange={this.myChangeHandler}
                         />
                         {this.state.errors.password.length > 0 &&

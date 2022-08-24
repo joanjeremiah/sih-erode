@@ -30,6 +30,9 @@ const NavLinks = props => {
       <li>
         <NavLink to="/exercise">Exercises</NavLink>
       </li>
+      <li>
+        <NavLink to="/chat">Connect</NavLink>
+      </li>
       </>
     )}
 

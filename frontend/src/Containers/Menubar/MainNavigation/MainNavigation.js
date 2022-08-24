@@ -29,7 +29,7 @@ const MainNavigation = props => {
       <div className={attachedClasses.join(' ')}>
         {(
           <SideDrawer open={drawerIsOpen} closed={closeDrawer} >
-            <h3 className="text-left mt-2 pl-4">Emotionsfluent</h3>
+            <h3 className="text-left mt-2 pl-4">ReboundX</h3>
             <hr />
             <nav className="main-navigation__drawer-nav" >
               <img src={img} alt="logo" />
@@ -48,7 +48,7 @@ const MainNavigation = props => {
           <span />
         </button>
         <h1 className="main-navigation__title">
-          <Link to="/"> Emotionsfluent</Link>
+          <Link to="/"> ReboundX</Link>
         </h1>
         <nav className="main-navigation__header-nav">
           <NavLinks />

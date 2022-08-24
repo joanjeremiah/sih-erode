@@ -22,7 +22,8 @@ import Home from './Components/Home';
 import Secondary from './Components/questionnaire/Secondary';
 import Excercise from './Components/Exercise/Excercise'
 import ExerciseDetail from './Components/Exercise/ExerciseDetail'
-
+import ChatApp from './Components/ChatApp/ChatApp'
+import setAvatar from './Components/ChatApp/SetAvatar'
 
 let logoutTimer;
 
@@ -104,6 +105,8 @@ const App = (props) => {
       {token ? <Route path="/podcast" component={Podcast} exact />: <Redirect to="/auth" />}
       {token ? <Route path="/exercise" component={Excercise} exact />: <Redirect to="/auth" />}
       {token ? <Route path="/exercise/:id" component={ExerciseDetail} exact />: <Redirect to="/auth" />}
+      {token ? <Route path="/chat" component={ChatApp} exact />: <Redirect to="/auth" />}
+      {token ? <Route path="/setAvatar" component={setAvatar} exact />: <Redirect to="/auth" />}
     </>
     )
   }
@@ -125,7 +128,7 @@ const App = (props) => {
             <Switch>
             <Route path="/" component={Home} exact />
               <Route path="/auth" component={Auth} exact />
-              <Route path="/chat" component={Chat} exact />
+              {/* <Route path="/chat" component={Chat} exact /> */}
               {route}
 
             </Switch>
