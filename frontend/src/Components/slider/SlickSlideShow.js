@@ -2,7 +2,8 @@ import React from 'react'
 import Slider from "react-slick";
 import "./Slider.css";
 // import angry from '../../assets/angry.jpg'
-import img1 from '../../assets/1.svg'
+// import img1 from '../../assets/1.svg'
+import img1 from '../../assets/zczc.png'
 import anxiety from '../../assets/generalized-anxiety.png'
 
 class ReactSlickDemo extends React.Component {
@@ -11,7 +12,7 @@ class ReactSlickDemo extends React.Component {
         infinite: true,
         autoplay: true,
         speed: 2000,
-        // autoplaySpeed: 4000,
+        autoplaySpeed: 4000,
         dots: true,
         // slidesToShow: 2,
       };

@@ -119,5 +119,15 @@ router.post("/signup", (req, res, next) => {
     }
   })
 
+  router.post('/score/add',checkAuth,async (req,res) => {
+    console.log(req.userData)
+    console.log(req.body)
+    const update = await User.update(
+      { _id: req.userData.userId}, 
+      { $push: { scores: {value: req.body.score} } }
+    )
+    // console.log(update)
+    res.json({message: 'Score saved!'})
+  })
 
 module.exports = router

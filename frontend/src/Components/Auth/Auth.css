@@ -18,3 +18,25 @@ label{
 .error h5{
     color:red;
 }
+
+.auth-container{
+    width: 30vw !important;
+    display: grid;
+    place-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 7rem 0 4rem 0;
+    background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
+    
+}
+
+.auth-container #card-title {
+    font-family: "Raleway Thin", sans-serif;
+    letter-spacing: 4px;
+    padding-bottom: 23px;
+    padding-top: 13px;
+    text-align: center;
+}
+
+.auth-container input{
+    width: 100%;
+}

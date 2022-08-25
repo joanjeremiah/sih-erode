@@ -1,0 +1,11 @@
+.chatapp-container{
+    padding: 0 !important;
+}
+
+.chat-messages .sended .content{
+    margin-right: 0;
+}
+
+.chat-messages .recieved .content{
+    margin-left: 0;
+}

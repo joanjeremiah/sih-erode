@@ -9,6 +9,7 @@ import Welcome from './Welcome';
 import ChatContainer from './ChatContainer';
 import {io}  from 'socket.io-client';
 import fetchUserData from '../../utils/fetchUserData';
+import './Chat.css'
 
 function Chat() {
   const socket = useRef();
@@ -54,7 +55,7 @@ useEffect(()=>{
 
   return (<>
     <Container>
-<div className='container'>
+<div className='container chatapp-container'>
   <Contacts contacts={contacts} currentUser={currentUser}  changeChat={handleChatChange}/> 
   
   

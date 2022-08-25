@@ -6,7 +6,7 @@ import validEmailRegex from '../../utils/emailRegex'
 import './Auth.css'
 import { AuthContext } from '../../context/auth-context'
 import Spinner from '../../Containers/Spinner/Spinner';
-import { toast, ToastContainer} from 'react-toastify'
+import { toast} from 'react-toastify'
 
 export class Auth extends Component {
     static contextType = AuthContext
@@ -199,8 +199,12 @@ export class Auth extends Component {
             {isLoading}
             {iserror}
 
-            <div className="container container-short py-5">
-                <h1 className="pt-2 py-2">{this.state.isLoginMode ? 'Login ' : 'Sign Up'}</h1>
+            <div className="container container-short py-5 auth-container">
+                {/* <h1 className="pt-2 py-2">{this.state.isLoginMode ? 'Login ' : 'Sign Up'}</h1> */}
+                <div id="card-title">
+                    <h2 className="pt-2 py-2">{this.state.isLoginMode ? 'Login ' : 'Sign Up'}</h2>
+                    <div class="underline-title"></div>
+                </div>
                 <hr></hr>
                 <form onSubmit={this.mySubmitHandler} className="pt-4">
                     {!this.state.isLoginMode && <div className="form-group">
@@ -223,7 +227,7 @@ export class Auth extends Component {
                             type='email'
                             name='email'
                             value={this.state.user.email}
-                            className={"form-control " + (this.state.errors.email ? 'is-invalid' : '')}
+                            className={"form-control form-content " + (this.state.errors.email ? 'is-invalid' : '')}
                             placeholder="Enter your email"
                             required
                             onChange={this.myChangeHandler}
@@ -265,7 +269,7 @@ export class Auth extends Component {
                         >Switch to {this.state.isLoginMode ? 'Sign Up' : 'Login'} </button>
                     </div>
                 </form>
-                <ToastContainer />
+                {/* <ToastContainer /> */}
             </div>
         </>
         )

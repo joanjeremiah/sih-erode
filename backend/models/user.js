@@ -1,5 +1,13 @@
 const mongoose = require('mongoose');
 
+const Score = mongoose.Schema({
+  value: Number,
+  date: {
+    type: Date,
+    default: Date.now
+  }
+})
+
 const User = mongoose.model('User', {
     username: {
         type: String,
@@ -27,6 +35,7 @@ const User = mongoose.model('User', {
         type: String,
         default: "",
       },
+      scores: [Score]
 });
 
 

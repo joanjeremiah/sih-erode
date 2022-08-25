@@ -5,6 +5,7 @@ import { StylesManager, Model } from "survey-core";
 import { Survey } from "survey-react-ui";
 import Axios from "axios"
 import Spinner from '../../Containers/Spinner/Spinner';
+import AudioRecorder from "./AudioRecorder";
 
 StylesManager.applyTheme("modern");
 
@@ -50,7 +51,11 @@ function Secondary() {
   survey.onComplete.add(alertResults);
 
   return (
-    <Survey model={survey} />
+    <>
+      <AudioRecorder />
+      <Survey model={survey} />
+    </>
+    
   );
 }
 

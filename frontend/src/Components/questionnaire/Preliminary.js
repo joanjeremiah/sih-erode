@@ -6,6 +6,7 @@ import { StylesManager, Model } from "survey-core";
 import { Survey } from "survey-react-ui";
 import Axios from "axios"
 import Spinner from '../../Containers/Spinner/Spinner';
+import { toast } from 'react-toastify'
 
 StylesManager.applyTheme("modern");
 
@@ -52,6 +53,23 @@ function Preliminary() {
         }
       })
       console.log(score)
+      try{
+        Axios.post('/user/score/add',{score})
+        .then(res => {
+          console.log(res)
+          toast(res.data.message, {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+          });
+        })
+      }catch(e){
+        console.log(e)
+      }
       return pre
     })
     surveyJson.elements.forEach(element => {

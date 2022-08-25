@@ -14,7 +14,6 @@ import { AuthContext } from './context/auth-context'
 
 import Spinner from './Containers/Spinner/Spinner';
 import Footer from './Containers/footer/footer'
-import { Chat } from './Components/chat/Chat';
 import 'react-toastify/dist/ReactToastify.css';
 import Preliminary from './Components/questionnaire/Preliminary';
 import Podcast from './Components/Podcast/Podcast';
@@ -24,6 +23,8 @@ import Excercise from './Components/Exercise/Excercise'
 import ExerciseDetail from './Components/Exercise/ExerciseDetail'
 import ChatApp from './Components/ChatApp/ChatApp'
 import setAvatar from './Components/ChatApp/SetAvatar'
+
+import {ToastContainer} from 'react-toastify'
 
 let logoutTimer;
 
@@ -121,7 +122,7 @@ const App = (props) => {
       }}
     >
       <div className="App">
-
+        <ToastContainer />
         <main>
           <Router>
             <MainNavigation />
