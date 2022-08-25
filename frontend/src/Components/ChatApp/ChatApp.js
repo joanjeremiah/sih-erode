@@ -32,7 +32,7 @@ function Chat() {
         console.log(4)
         if (currentUser.isAvatarImageSet) {
           console.log(1)
-          const data = await axios.get(`${process.env.REACT_APP_baseURL}/user/all`);
+          const data = await axios.get(`/user/all`);
           
           setContacts(data.data);
         }else {
