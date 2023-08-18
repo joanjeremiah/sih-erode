@@ -5,7 +5,7 @@ function footer() {
 
     return (
         <>      
-            <h5 className="text-center copyright"> © Copyrights reserved by Joan Jeremiah J</h5>
+            <h5 className="text-center copyright"> © Copyrights 2023</h5>
         </>
     )
 }
